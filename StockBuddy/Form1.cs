@@ -10,11 +10,27 @@ using System.Windows.Forms;
 
 namespace StockBuddy
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
+        }
+
+        private void CheckoutBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InventoryBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            InventoryBtn.BringToFront();
+            CheckoutBtn.BringToFront();
         }
     }
 }
