@@ -25,11 +25,13 @@ namespace StockBuddy
 
         private void CheckoutBtn_Click(object sender, EventArgs e)
         {
+            manage = false;
             ShowPasswordPrompt(manage);
         }
 
         private void InventoryBtn_Click(object sender, EventArgs e)
         {
+            manage = true;
             ShowPasswordPrompt(manage);
         }
 

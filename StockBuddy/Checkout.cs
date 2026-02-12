@@ -8,6 +8,7 @@ namespace StockBuddy
     public partial class Checkout : Form
     {
         private readonly List<Item> cart = new List<Item>();
+        decimal total;
 
         public Checkout()
         {
@@ -25,7 +26,8 @@ namespace StockBuddy
 
         private void CheckoutBtn_Click(object sender, EventArgs e)
         {
-
+            var showTotal = new Total(total);
+            showTotal.ShowDialog();
         }
 
         private void txtScan_TextChanged(object sender, EventArgs e)
@@ -75,7 +77,7 @@ namespace StockBuddy
                 {
                     itemName = "Chocolate Bar",
                     itemNum = 111111111111,
-                    itemPrice = 2m
+                    itemPrice = 2.99m
                 };
             }
 
@@ -84,7 +86,7 @@ namespace StockBuddy
 
         private void UpdateTotal()
         {
-            decimal total = cart.Sum(i => i.itemPrice);
+            total = cart.Sum(i => i.itemPrice);
             totalLbl.Text = $"Total: ${total:0.00}";
         }
     }

@@ -104,6 +104,7 @@
             this.Controls.Add(this.txtScan);
             this.Name = "Checkout";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Checkout";
             this.Load += new System.EventHandler(this.Checkout_Load);
             this.ResumeLayout(false);
