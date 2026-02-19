@@ -8,8 +8,8 @@ namespace StockBuddy
 {
     public class Item
     {
-        public string itemName {  get; set; }
+        public string itemName { get; set; }
         public long itemNum { get; set; }
-        public decimal itemPrice {  get; set; }
+        public decimal itemPrice { get; set; }
     }
 }

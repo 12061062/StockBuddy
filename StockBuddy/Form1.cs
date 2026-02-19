@@ -15,7 +15,6 @@ namespace StockBuddy
         InventoryPaswordPrompt inventoryPaswordPrompt = new InventoryPaswordPrompt();
         bool manage;
         bool formType;
-        Checkout checkout = new Checkout();
         public Home()
         {
             InitializeComponent();
@@ -53,11 +52,14 @@ namespace StockBuddy
                     if (manage && entered == "test") // placeholder
                     {
                         MessageBox.Show("Access granted");
+                        Manage manageModal = new Manage();
+                        manageModal.ShowDialog(this);
                         return true;
                     }
                     else if (!manage && entered == "test2")
                     {
                         MessageBox.Show("Access granted");
+                        Checkout checkout = new Checkout();
                         checkout.ShowDialog();
                         return true;
                     }

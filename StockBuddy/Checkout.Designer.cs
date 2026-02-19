@@ -64,11 +64,11 @@
             this.headerLbl.AutoSize = true;
             this.headerLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerLbl.ForeColor = System.Drawing.Color.White;
-            this.headerLbl.Location = new System.Drawing.Point(352, 117);
+            this.headerLbl.Location = new System.Drawing.Point(297, 117);
             this.headerLbl.Name = "headerLbl";
-            this.headerLbl.Size = new System.Drawing.Size(261, 27);
+            this.headerLbl.Size = new System.Drawing.Size(154, 27);
             this.headerLbl.TabIndex = 2;
-            this.headerLbl.Text = "Number | Name | Price";
+            this.headerLbl.Text = "Name | Price";
             // 
             // totalLbl
             // 

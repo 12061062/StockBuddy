@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using StockBuddy.Data;
 
 namespace StockBuddy
 {
@@ -70,18 +72,33 @@ namespace StockBuddy
 
         private Item GetItemFromScan(long scanNumber)
         {
-            // TEMP mock data
-            if (scanNumber == 111111111111)
+            using (var conn = new SQLiteConnection(Database.ConnString))
             {
-                return new Item
-                {
-                    itemName = "Chocolate Bar",
-                    itemNum = 111111111111,
-                    itemPrice = 2.99m
-                };
-            }
+                conn.Open();
 
-            return null;
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+SELECT Name, Barcode, Price
+FROM Products
+WHERE Barcode = @barcode AND IsActive = 1;
+";
+                    cmd.Parameters.AddWithValue("@barcode", scanNumber);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (!reader.Read())
+                            return null;
+
+                        return new Item
+                        {
+                            itemName = reader.GetString(0),
+                            itemNum = reader.GetInt64(1),
+                            itemPrice = Convert.ToDecimal(reader.GetDouble(2))
+                        };
+                    }
+                }
+            }
         }
 
         private void UpdateTotal()

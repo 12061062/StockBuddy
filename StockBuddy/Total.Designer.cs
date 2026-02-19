@@ -42,6 +42,7 @@
             this.emailTxt.Location = new System.Drawing.Point(96, 136);
             this.emailTxt.Multiline = true;
             this.emailTxt.Name = "emailTxt";
+            this.emailTxt.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.emailTxt.Size = new System.Drawing.Size(237, 37);
             this.emailTxt.TabIndex = 0;
             // 
