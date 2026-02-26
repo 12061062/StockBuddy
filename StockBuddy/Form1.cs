@@ -12,26 +12,44 @@ namespace StockBuddy
 {
     public partial class Home : Form
     {
-        InventoryPaswordPrompt inventoryPaswordPrompt = new InventoryPaswordPrompt();
         bool manage;
-        bool formType;
+        bool correctPassword;
         public Home()
         {
             InitializeComponent();
-            MaximizeBox = false;
-            MinimumSize = MaximumSize = new Size(993, 628);
+            this.MaximizeBox = false;
+            this.WindowState = FormWindowState.Maximized;
+            this.Bounds = Screen.PrimaryScreen.Bounds;
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void CheckoutBtn_Click(object sender, EventArgs e)
         {
             manage = false;
-            ShowPasswordPrompt(manage);
+            correctPassword = false;
+            while (!correctPassword)
+            {
+                correctPassword = ShowPasswordPrompt(manage);
+            }
         }
 
         private void InventoryBtn_Click(object sender, EventArgs e)
         {
             manage = true;
-            ShowPasswordPrompt(manage);
+            correctPassword = false;
+            while (!correctPassword)
+            {
+                correctPassword = ShowPasswordPrompt(manage);
+            }
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -48,8 +66,7 @@ namespace StockBuddy
                 {
                     string entered = dlg.Password;
 
-                    // TODO: validate entered password (prefer hashed check in DB)
-                    if (manage && entered == "test") // placeholder
+                    if (manage && entered == "test")
                     {
                         MessageBox.Show("Access granted");
                         Manage manageModal = new Manage();
@@ -68,9 +85,12 @@ namespace StockBuddy
                         MessageBox.Show("Incorrect password");
                     }
                 }
-                return false;
+                else if (dlg.DialogResult == DialogResult.Cancel)
+                {
+                    return true;
+                }
             }
-
+            return false;
         }
     }
 }

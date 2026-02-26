@@ -15,12 +15,28 @@ namespace StockBuddy
         public Manage()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.WindowState = FormWindowState.Maximized;
+            this.Bounds = Screen.PrimaryScreen.Bounds;
         }
-
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void addItem_Click(object sender, EventArgs e)
         {
             AddItem addItem = new AddItem();
             addItem.ShowDialog();
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -214,6 +214,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Item";
+            this.Load += new System.EventHandler(this.AddItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

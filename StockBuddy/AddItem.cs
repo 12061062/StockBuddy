@@ -121,5 +121,10 @@ VALUES (@name, @sku, @barcode, @price, @cost, @qty, @reorder, 1);
                 MessageBox.Show("Unexpected error: " + ex.Message);
             }
         }
+
+        private void AddItem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

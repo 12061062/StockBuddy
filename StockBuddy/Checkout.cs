@@ -19,8 +19,19 @@ namespace StockBuddy
             txtScan.Multiline = true;
             txtScan.AcceptsReturn = true;
             txtScan.Focus();
+            this.MaximizeBox = false;
+            this.WindowState = FormWindowState.Maximized;
+            this.Bounds = Screen.PrimaryScreen.Bounds;
         }
-
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                this.Close();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void Checkout_Load(object sender, EventArgs e)
         {
             txtScan.Focus();
@@ -97,7 +108,7 @@ WHERE Barcode = @barcode AND IsActive = 1;
                             itemPrice = Convert.ToDecimal(reader.GetDouble(2))
                         };
                     }
-                }
+                } 
             }
         }
 
@@ -105,6 +116,11 @@ WHERE Barcode = @barcode AND IsActive = 1;
         {
             total = cart.Sum(i => i.itemPrice);
             totalLbl.Text = $"Total: ${total:0.00}";
+        }
+
+        private void txtLog_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
