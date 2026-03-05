@@ -1,1 +1,3 @@
+The StockBuddy repository includes documentation to help developers understand, maintain, and contribute to the project. The README.md file provides an overview of the application, setup instructions, and a description of the main features. Code is documented with concise comments where necessary to explain important logic or complex functionality. Public methods and core components include brief summaries describing their purpose.
 
+Project documentation such as wireframes, design notes, and sprint artifacts are stored in the repository to support the development process. All documentation is written clearly and updated when major features or structural changes are made to ensure the repository remains easy to navigate and understand.
