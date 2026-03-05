@@ -1,0 +1,3 @@
+The UI/UX design of StockBuddy focuses on simplicity and efficiency for retail environments. The interface is designed to allow users, such as cashiers and managers, to complete tasks quickly with minimal steps. Key workflows such as scanning items, viewing cart totals, and managing inventory are clearly organized to reduce confusion and improve usability. The layout prioritizes large input areas, clear feedback messages, and straightforward navigation to support fast and intuitive operation during checkout.
+
+<img width="1909" height="1192" alt="image" src="https://github.com/user-attachments/assets/584f4c0b-1b69-445c-9276-dad23d39ff05" />
