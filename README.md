@@ -39,32 +39,17 @@ More details are available in:
 Documentation/DeploymentEnvironment.md
 
 # Repository Structure
-StockBuddy/
-│
-├── StockBuddy/ # Main WinForms application
-│
-├── StockBuddy.Tests/ # Unit tests for application logic
-│
-├── Documentation/ # Project documentation
-│ ├── CodingStandards.md
-│ ├── DocumentationStandards.md
-│ ├── DeploymentEnvironment.md
-│ ├── ProductVision.md
-│ ├── ProjectGoals&ReleasePlan.md
-│ ├── VersionManagement.md
-│ ├── TestPlanTestsPerformed.md
-│ ├── UIUXDesign.md
-│ │
-│ ├── Database Design Diagram.jpeg
-│ ├── Process Flow Diagram.jpeg
-│ ├── System Architecture Design Diagram.jpeg
-│ │
-│ └── Sprints/
-│ ├── Reports/
-│ └── SCRUM Board/
-│
-└── README.md
+The repository is organized into several main sections:
 
+StockBuddy/ – Contains the main application source code for the Windows Forms POS and inventory system.
+
+StockBuddy.Tests/ – Contains unit tests used to validate important application logic and functionality.
+
+Documentation/ – Contains all project documentation, including coding standards, deployment environment, version management, UI/UX design, test plans, and diagrams such as the database design, system architecture, and process flow diagrams.
+
+Documentation/Sprints/ – Contains sprint artifacts related to the Agile Scrum development process, including sprint reports and the SCRUM board.
+
+README.md – Provides an overview of the project, features, technology stack, and links to relevant documentation.
 
 # Testing
 
