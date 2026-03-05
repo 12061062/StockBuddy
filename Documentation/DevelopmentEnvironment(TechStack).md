@@ -1,0 +1,7 @@
+- Frontend: WinForms
+- Backend:  C# .NET
+- Database: SQLite
+- Authentication: Role-based
+- Testing: Jest/Cypress/Postman
+- CI/CD: Github Actions
+- Deployment: Windows application deployed as executable
