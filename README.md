@@ -41,26 +41,31 @@ Documentation/DeploymentEnvironment.md
 # Repository Structure
 StockBuddy/
 │
-├── StockBuddy/                # Main application source code
-├── StockBuddy.Tests/          # Unit tests for core application logic
+├── StockBuddy/ # Main WinForms application
 │
-├── Documentation/
-│   ├── CodingStandards.md
-│   ├── DocumentationStandards.md
-│   ├── DeploymentEnvironment.md
-│   ├── ProductVision.md
-│   ├── ProjectGoals&ReleasePlan.md
-│   ├── VersionManagement.md
-│   ├── TestPlanTestsPerformed.md
-│   ├── UIUXDesign.md
-│   │
-│   ├── Database Design Diagram.jpeg
-│   ├── Process Flow Diagram.jpeg
-│   ├── System Architecture Design Diagram.jpeg
-│   │
-│   └── Sprints/
-│       ├── Reports/
-│       └── SCRUM Board/
+├── StockBuddy.Tests/ # Unit tests for application logic
+│
+├── Documentation/ # Project documentation
+│ ├── CodingStandards.md
+│ ├── DocumentationStandards.md
+│ ├── DeploymentEnvironment.md
+│ ├── ProductVision.md
+│ ├── ProjectGoals&ReleasePlan.md
+│ ├── VersionManagement.md
+│ ├── TestPlanTestsPerformed.md
+│ ├── UIUXDesign.md
+│ │
+│ ├── Database Design Diagram.jpeg
+│ ├── Process Flow Diagram.jpeg
+│ ├── System Architecture Design Diagram.jpeg
+│ │
+│ └── Sprints/
+│ ├── Reports/
+│ └── SCRUM Board/
+│
+└── README.md
+
+
 # Testing
 
 Unit tests are located in the StockBuddy.Tests project and are used to validate important application logic. The project also includes manual testing and planned integration testing to verify that the user interface, database operations, and business logic work together correctly.
