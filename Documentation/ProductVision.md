@@ -1,1 +1,1 @@
-
+StockBuddy is a web-based inventory and point-of-sale (POS) application designed for small retail businesses that need an efficient way to manage inventory and sales. The system enables accurate inventory tracking, fast sales processing, and real-time reporting to help businesses operate more smoothly. Unlike manual systems or basic cash registers, StockBuddy provides secure, role-based access, automated inventory updates, and useful business data that supports better decision-making and day-to-day operations.
