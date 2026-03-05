@@ -36,7 +36,8 @@ namespace StockBuddy
 
         private void removeBtn_Click(object sender, EventArgs e)
         {
-
+            RemoveItem removeItem = new RemoveItem();
+            removeItem.ShowDialog();
         }
     }
 }
