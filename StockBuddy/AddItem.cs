@@ -126,5 +126,10 @@ VALUES (@name, @sku, @barcode, @price, @cost, @qty, @reorder, 1);
         {
 
         }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

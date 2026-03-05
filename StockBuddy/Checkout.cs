@@ -39,7 +39,7 @@ namespace StockBuddy
 
         private void CheckoutBtn_Click(object sender, EventArgs e)
         {
-            var showTotal = new Total(total);
+            var showTotal = new Total(total, cart);
             showTotal.ShowDialog();
         }
 

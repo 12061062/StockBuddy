@@ -1,21 +1,26 @@
-﻿using System;
+﻿using StockBuddy.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net;
-using System.Net.Mail;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace StockBuddy
 {
     public partial class Total : Form
     {
+        private List<Item> _cart = new List<Item>();
+
         decimal total;
-        public Total(decimal total)
+        public Total(decimal total, List<Item> cart)
         {
             InitializeComponent();
             this.total = total;
@@ -24,6 +29,7 @@ namespace StockBuddy
             decimal tax = Math.Round(total * .0925m, 2);
             taxLbl.Text += $"${tax}";
             totalLbl.Text += $"${Math.Round(total + tax, 2)}";
+            _cart = cart;
         }
 
         private void Total_Load(object sender, EventArgs e)
@@ -44,8 +50,78 @@ namespace StockBuddy
             try
             {
                 button1.Enabled = false;
+
                 await SendReceiptEmailAsync(customerEmail);
+
+                // UPDATE INVENTORY
+                List<string> reorderAlerts = new List<string>();
+
+                using (var conn = new SQLiteConnection(Database.ConnString))
+                {
+                    conn.Open();
+
+                    // group cart items by barcode to know how many were sold
+                    var groupedItems = _cart
+                        .GroupBy(i => i.itemNum)
+                        .Select(g => new
+                        {
+                            Barcode = g.Key,
+                            QuantitySold = g.Count()
+                        });
+
+                    foreach (var item in groupedItems)
+                    {
+                        using (var cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = @"
+UPDATE Products
+SET QuantityOnHand = QuantityOnHand - @qty
+WHERE Barcode = @barcode;
+";
+
+                            cmd.Parameters.AddWithValue("@qty", item.QuantitySold);
+                            cmd.Parameters.AddWithValue("@barcode", item.Barcode);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        // Check reorder level
+                        using (var cmd = conn.CreateCommand())
+                        {
+                            cmd.CommandText = @"
+SELECT Name, QuantityOnHand, ReorderLevel
+FROM Products
+WHERE Barcode = @barcode;
+";
+
+                            cmd.Parameters.AddWithValue("@barcode", item.Barcode);
+
+                            using (var reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    string name = reader.GetString(0);
+                                    int qty = reader.GetInt32(1);
+                                    int reorder = reader.GetInt32(2);
+
+                                    if (qty <= reorder)
+                                    {
+                                        reorderAlerts.Add($"{name} is low on stock ({qty} left)");
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
                 MessageBox.Show("Receipt emailed successfully!");
+
+                if (reorderAlerts.Count > 0)
+                {
+                    MessageBox.Show(
+                        "Reorder Alert:\n\n" + string.Join("\n", reorderAlerts),
+                        "Low Inventory Warning"
+                    );
+                }
             }
             catch (Exception ex)
             {
@@ -56,7 +132,6 @@ namespace StockBuddy
                 button1.Enabled = true;
             }
         }
-
         private async Task SendReceiptEmailAsync(string customerEmail)
         {
             // Calculate numbers

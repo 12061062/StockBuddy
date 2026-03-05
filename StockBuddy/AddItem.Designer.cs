@@ -43,13 +43,14 @@
             this.txtQty = new System.Windows.Forms.TextBox();
             this.txtReorder = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.ExitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(73, 57);
+            this.lblName.Location = new System.Drawing.Point(69, 109);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(84, 27);
             this.lblName.TabIndex = 0;
@@ -59,7 +60,7 @@
             // 
             this.txtSKU.AutoSize = true;
             this.txtSKU.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSKU.Location = new System.Drawing.Point(73, 124);
+            this.txtSKU.Location = new System.Drawing.Point(69, 176);
             this.txtSKU.Name = "txtSKU";
             this.txtSKU.Size = new System.Drawing.Size(68, 27);
             this.txtSKU.TabIndex = 1;
@@ -69,7 +70,7 @@
             // 
             this.lblBarcode.AutoSize = true;
             this.lblBarcode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBarcode.Location = new System.Drawing.Point(36, 204);
+            this.lblBarcode.Location = new System.Drawing.Point(32, 256);
             this.lblBarcode.Name = "lblBarcode";
             this.lblBarcode.Size = new System.Drawing.Size(116, 27);
             this.lblBarcode.TabIndex = 2;
@@ -79,7 +80,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(73, 279);
+            this.lblPrice.Location = new System.Drawing.Point(69, 331);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(78, 27);
             this.lblPrice.TabIndex = 3;
@@ -89,7 +90,7 @@
             // 
             this.lblCost.AutoSize = true;
             this.lblCost.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCost.Location = new System.Drawing.Point(73, 352);
+            this.lblCost.Location = new System.Drawing.Point(69, 404);
             this.lblCost.Name = "lblCost";
             this.lblCost.Size = new System.Drawing.Size(70, 27);
             this.lblCost.TabIndex = 4;
@@ -99,7 +100,7 @@
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(44, 417);
+            this.lblQuantity.Location = new System.Drawing.Point(40, 469);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(113, 27);
             this.lblQuantity.TabIndex = 5;
@@ -109,7 +110,7 @@
             // 
             this.lblReorder.AutoSize = true;
             this.lblReorder.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReorder.Location = new System.Drawing.Point(45, 486);
+            this.lblReorder.Location = new System.Drawing.Point(41, 538);
             this.lblReorder.Name = "lblReorder";
             this.lblReorder.Size = new System.Drawing.Size(112, 27);
             this.lblReorder.TabIndex = 6;
@@ -119,7 +120,7 @@
             // 
             this.txtName.AcceptsReturn = true;
             this.txtName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(163, 39);
+            this.txtName.Location = new System.Drawing.Point(159, 91);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(211, 58);
@@ -128,7 +129,7 @@
             // txtS
             // 
             this.txtS.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtS.Location = new System.Drawing.Point(169, 121);
+            this.txtS.Location = new System.Drawing.Point(165, 173);
             this.txtS.Multiline = true;
             this.txtS.Name = "txtS";
             this.txtS.Size = new System.Drawing.Size(205, 45);
@@ -137,7 +138,7 @@
             // txtBarcode
             // 
             this.txtBarcode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBarcode.Location = new System.Drawing.Point(158, 201);
+            this.txtBarcode.Location = new System.Drawing.Point(154, 253);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtBarcode.Size = new System.Drawing.Size(216, 34);
@@ -146,7 +147,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(187, 252);
+            this.txtPrice.Location = new System.Drawing.Point(183, 304);
             this.txtPrice.Multiline = true;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(187, 57);
@@ -155,7 +156,7 @@
             // txtCost
             // 
             this.txtCost.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCost.Location = new System.Drawing.Point(187, 333);
+            this.txtCost.Location = new System.Drawing.Point(183, 385);
             this.txtCost.Multiline = true;
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(187, 46);
@@ -164,7 +165,7 @@
             // txtQty
             // 
             this.txtQty.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(187, 414);
+            this.txtQty.Location = new System.Drawing.Point(183, 466);
             this.txtQty.Multiline = true;
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(187, 50);
@@ -173,7 +174,7 @@
             // txtReorder
             // 
             this.txtReorder.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReorder.Location = new System.Drawing.Point(215, 483);
+            this.txtReorder.Location = new System.Drawing.Point(211, 535);
             this.txtReorder.Multiline = true;
             this.txtReorder.Name = "txtReorder";
             this.txtReorder.Size = new System.Drawing.Size(159, 57);
@@ -190,11 +191,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ExitBtn
+            // 
+            this.ExitBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitBtn.Location = new System.Drawing.Point(330, 12);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Size = new System.Drawing.Size(108, 55);
+            this.ExitBtn.TabIndex = 15;
+            this.ExitBtn.Text = "Exit";
+            this.ExitBtn.UseVisualStyleBackColor = true;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
+            // 
             // AddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 759);
+            this.ClientSize = new System.Drawing.Size(450, 706);
+            this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtReorder);
             this.Controls.Add(this.txtQty);
@@ -210,10 +223,10 @@
             this.Controls.Add(this.lblBarcode);
             this.Controls.Add(this.txtSKU);
             this.Controls.Add(this.lblName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddItem";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Item";
             this.Load += new System.EventHandler(this.AddItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,5 +250,6 @@
         private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.TextBox txtReorder;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ExitBtn;
     }
 }
