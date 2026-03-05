@@ -1,1 +1,1 @@
-
+Version control for StockBuddy is managed using Git and hosted on GitHub. The repository tracks all changes to the codebase and allows team members to collaborate efficiently. Development is organized using feature branches, and changes are merged into the main branch after review and testing. GitHub also provides a history of commits, making it easier to track modifications and revert changes if necessary.
