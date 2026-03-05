@@ -10,7 +10,7 @@ Tasks Completed
   - Created the initial layout and navigation structure for the application.
 2. Cart Editing Functionality
   - Implemented the ability to remove items from the POS cart for corrections.
-4. Remove Inventory Items
+3. Remove Inventory Items
   - Implemented the ability to remove products from the database.
 4. Product Search Feature
   - Implemented manual product search by name or SKU when barcode scanning fails.
