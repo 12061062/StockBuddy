@@ -3,5 +3,5 @@
 - Database: SQLite
 - Authentication: Role-based
 - Testing: Jest/Cypress/Postman
-- CI/CD: Github Actions
-- Deployment: Windows application deployed as executable
+- Version Control: Git / GitHub
+- Deployment: Windows application deployed as an executable
