@@ -27,4 +27,4 @@ jobs:
       run: msbuild StockBuddy.sln /p:Configuration=Release
 
     - name: Run tests
-      run: vstest.console.exe StockBuddyTest\bin\Release\StockBuddyTest.dll
+      run: dotnet test StockBuddyTest/StockBuddyTest.csproj
