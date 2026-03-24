@@ -39,5 +39,10 @@ namespace StockBuddy
             RemoveItem removeItem = new RemoveItem();
             removeItem.ShowDialog();
         }
+
+        private void stockLvlBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
