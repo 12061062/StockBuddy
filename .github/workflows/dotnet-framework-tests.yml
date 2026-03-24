@@ -55,4 +55,4 @@ jobs:
     - name: Run tests
       shell: powershell
       run: |
-        & "${{ steps.find_vstest.outputs.vstest }}" "StockBuddyTest\bin\Release\StockBuddyTest.dll"
+            $testDll = Get-ChildItem -Recurse -Filter StockBuddyTest.dll | Where-Object { $_.FullName -match "\\bin\\Release\\" } | Select-Object -First 1 if (-not $testDll) {throw "StockBuddyTest.dll not found in Release output."} & "${{ steps.find_vstest.outputs.vstest }}" $testDll.FullName
