@@ -26,5 +26,33 @@ jobs:
     - name: Build solution
       run: msbuild StockBuddy.sln /p:Configuration=Release
 
+    - name: List test build output
+      shell: powershell
+      run: |
+        Get-ChildItem -Recurse StockBuddyTest\bin
+
+    - name: Find VSTest
+      id: find_vstest
+      shell: powershell
+      run: |
+        $vsPath = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" `
+          -latest `
+          -products * `
+          -property installationPath
+
+        if (-not $vsPath) {
+          throw "Visual Studio installation not found."
+        }
+
+        $vstest = Join-Path $vsPath "Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"
+
+        if (-not (Test-Path $vstest)) {
+          throw "vstest.console.exe not found at $vstest"
+        }
+
+        echo "vstest=$vstest" >> $env:GITHUB_OUTPUT
+
     - name: Run tests
-      run: dotnet test StockBuddyTest/StockBuddyTest.csproj
+      shell: powershell
+      run: |
+        & "${{ steps.find_vstest.outputs.vstest }}" "StockBuddyTest\bin\Release\StockBuddyTest.dll"
