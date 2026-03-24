@@ -57,6 +57,7 @@
             this.stockLvlBtn.TabIndex = 1;
             this.stockLvlBtn.Text = "View Stock Levels";
             this.stockLvlBtn.UseVisualStyleBackColor = true;
+            this.stockLvlBtn.Click += new System.EventHandler(this.stockLvlBtn_Click);
             // 
             // removeBtn
             // 
