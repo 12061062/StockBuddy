@@ -16,7 +16,7 @@ Specific Goals
 
 Release Plan
 ==================================================================
-- The project followed an iterative Scrum-based release plan, where the system was developed in multiple sprints, each focusing on building a specific set of features.
+- The StockBuddy system was developed using an iterative Scrum-based release plan over multiple sprints. Each sprint focused on delivering a set of functional features while gradually expanding the system from foundational setup to a complete POS and inventory management application.
 
 **Sprint 1 – Project Setup**
 Focus: Establish the development foundation.
@@ -57,48 +57,53 @@ Features:
 **Sprint 5 – Reporting Features**
 Focus: Provide insights into sales and inventory performance.
 
-Potential Planned features:
-- Basic sales reports
-- Inventory level reports
-- Transaction history tracking
+Features:
+- Basic Sales Reporting
+- Track Sales Transactions
+- Database updates product levels based on sales transactions
+- Fully implement view stock level reporting
+  
+**Sprint 6 – DevOps / CI Implementation**
+Focus: Improve development workflow and automation.
 
-**Sprint 6 – Inventory Enhancements**
-Focus: Improve inventory management tools.
+Features:
+- Update GitHub repository with automated testing file
+- Add automated testing to GitHub Actions
+- Improve workflow so code changes are tested immediately after development
+- Reduce the number of steps required to run and test the app
+  
+**Sprint 7 – DevOps2 / Feedback Loops**
+Focus: Improve reliability, feedback, and system stability.
 
-Potential Planned features:
-- Product editing and update functionality
-- Inventory adjustment features
-- Product category support
+Features:
+- Enhance test result output to improve readability and clarity
+- Implement notifications for failed builds/tests
+- Improve existing test cases based on previous failures
+- Identify and resolve recurring system defects
+  
+**Sprint 8 – Security Enhancements**
+Focus: Improve system security and data protection.
 
-**Sprint 7 – System Safeguards**
-Focus: Improve reliability and validation.
+Features:
+- Hash and securely store user credentials
+- Sanitize input fields to reduce injection risks
+- Ensure sensitive data is not exposed in logs or error messages
+- Reinforce role-based access control across the system
+  
+**Sprint 9 – Emerging Architectures**
+Focus: Explore event-driven and serverless architecture concepts.
 
-Potential Planned features:
-- Input validation improvements
-- Confirmation prompts for destructive actions
-- Improved error handling
+Features:
+- Trigger functions based on user actions (checkout | inventory | logging)
+- Refactor a feature into a standalone function (FaaS simulation)
+- Identify system components for event-driven architecture
+- Document transition to serverless architecture
+  
+**Sprint 10 – Finalization & Delivery**
+Focus: Prepare the system for final delivery and demonstration.
 
-**Sprint 8 – Testing and Quality Assurance**
-Focus: Improve system stability.
-
-Potential Planned features:
-- Additional automated and manual tests
-- Performance testing
-- Bug fixes and stability improvements
-
-**Sprint 9 – UI Refinement**
-Focus: Improve user experience and interface consistency.
-
-Potential Planned features:
-- UI design improvements
-- Navigation improvements between pages
-- Improved alert and notification display
-
-**Sprint 10 – Finalization & Deployment**
-Focus: Prepare the system for final delivery.
-
-Potential Planned features:
-- Final system testing
-- Documentation completion
-- Code cleanup and optimization
-- Final deployment build
+Features:
+- Perform final system testing
+- Create user manual/documentation
+- Display system metrics (total sales, items sold)
+- Clean up and refactor code for maintainability
