@@ -42,6 +42,7 @@
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
@@ -68,6 +69,13 @@
     </Compile>
     <Compile Include="AddItem.Designer.cs">
       <DependentUpon>AddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordHasher.cs" />
+    <Compile Include="ViewStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewStock.Designer.cs">
+      <DependentUpon>ViewStock.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddItem.resx">
       <DependentUpon>AddItem.cs</DependentUpon>
@@ -139,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Total.resx">
       <DependentUpon>Total.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewStock.resx">
+      <DependentUpon>ViewStock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

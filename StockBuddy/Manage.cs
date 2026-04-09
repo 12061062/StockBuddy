@@ -42,7 +42,8 @@ namespace StockBuddy
 
         private void stockLvlBtn_Click(object sender, EventArgs e)
         {
-
+            ViewStock viewStock = new ViewStock();
+            viewStock.ShowDialog();
         }
     }
 }

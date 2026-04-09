@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace StockBuddy
 {
@@ -64,32 +65,45 @@ namespace StockBuddy
             {
                 if (dlg.ShowDialog(this) == DialogResult.OK)
                 {
-                    string entered = dlg.Password;
+                    string entered = dlg.Password.Trim();
 
-                    if (manage && entered == "test")
+                    string storedHash = manage
+                        ? ConfigurationManager.AppSettings["ManagePasswordHash"]
+                        : ConfigurationManager.AppSettings["CheckoutPasswordHash"];
+
+                    bool valid = !string.IsNullOrEmpty(storedHash) &&
+                                 PasswordHasher.Verify(entered, storedHash);
+
+                    if (valid)
                     {
                         MessageBox.Show("Access granted");
-                        Manage manageModal = new Manage();
-                        manageModal.ShowDialog(this);
+
+                        if (manage)
+                        {
+                            using (var manageModal = new Manage())
+                            {
+                                manageModal.ShowDialog(this);
+                            }
+                        }
+                        else
+                        {
+                            using (var checkout = new Checkout())
+                            {
+                                checkout.ShowDialog(this);
+                            }
+                        }
+
                         return true;
                     }
-                    else if (!manage && entered == "test2")
-                    {
-                        MessageBox.Show("Access granted");
-                        Checkout checkout = new Checkout();
-                        checkout.ShowDialog();
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Incorrect password");
-                    }
+
+                    MessageBox.Show("Incorrect password");
                 }
                 else if (dlg.DialogResult == DialogResult.Cancel)
                 {
                     return true;
                 }
             }
+
             return false;
         }
     }
