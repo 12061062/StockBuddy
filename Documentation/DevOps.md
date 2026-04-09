@@ -7,7 +7,7 @@ Key implementations:
 - Improved workflow so code is tested immediately after commits
 - Reduced steps required to run and test the application
 
-=====================================================================================================================================
+=================================================================================
 
 DevOps Second Way (Feedback)
 - The Second Way of DevOps focuses on fast feedback loops so developers can quickly identify and fix issues. In our project, this was implemented during Sprint 7 by improving test visibility, notifications, and bug resolution processes.
