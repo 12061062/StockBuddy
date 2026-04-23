@@ -38,9 +38,8 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(192, 138);
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 43);
+            this.textBox1.Size = new System.Drawing.Size(213, 34);
             this.textBox1.TabIndex = 0;
             // 
             // label1
