@@ -17,3 +17,15 @@ Key implementations:
 - Implemented notifications for failed builds/tests
 - Enhanced test cases based on previous failures
 - Identified and resolved recurring system bugs
+
+=================================================================================
+
+DevOps Third Way (Learning)
+- The Third Way of DevOps focuses on creating a culture of continuous learning and improvement, where teams experiment, learn from failures, and refine their processes over time. In our project, this was implemented across Sprints 7–10, where the team continuously improved testing, architecture, and overall system quality based on previous results and feedback.
+
+Key implementations:
+- Improved test cases over time based on previous failures and defects
+- Identified and fixed recurring bugs to prevent repeated issues
+- Applied event-driven and serverless architecture concepts to explore better system design (Sprint 9)
+- Conducted final system testing and code refactoring to improve quality and maintainability (Sprint 10)
+- Documented system architecture and user workflows to support future development and learning
