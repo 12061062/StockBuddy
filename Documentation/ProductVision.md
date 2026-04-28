@@ -1,7 +1,7 @@
 - **For** small retail businesses
 - **Who** need an efficient way to manage inventory and sales
 - **The** StockBuddy application
-- **Is a** web-based inventory and POS application
+- **Is a** .exe inventory and POS application
 - **That** enables accurate inventory tracking, fast sales processing, and real-time reporting
 - **Unlike** manual systems or basic cash registers
 - **Our product** provides secure, role-based access, automated inventory updates, and usable business data.
